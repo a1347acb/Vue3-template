@@ -3,6 +3,8 @@ import vue from '@vitejs/plugin-vue'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import * as path from "path";
+import Icons from 'unplugin-icons/vite'
+import IconsResolver from 'unplugin-icons/resolver'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -34,6 +36,11 @@ export default defineConfig({
         // './composables/**', // all nested modules
         // ...
       ],
+      resolvers: [
+        IconsResolver({
+          prefix: 'Icon'
+        })
+      ],
 
       // Filepath to generate corresponding .d.ts file.
       // Defaults to './auto-imports.d.ts' when `typescript` is installed locally.
@@ -54,8 +61,19 @@ export default defineConfig({
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
 
       // custom resolvers
-      resolvers: [],
+      resolvers: [
+        IconsResolver({
+          // 这里添加需要引入的图标命名空间，比如ep、codicon
+          enabledCollections: [
+            'ep'
+          ]
+        })
+      ],
       dts: './components.d.ts'
+    }),
+    Icons({
+      autoInstall: true,
+      scale: 1,
     })
   ],
   resolve: {

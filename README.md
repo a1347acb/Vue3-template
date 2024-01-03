@@ -1,18 +1,14 @@
-# Vue 3 + TypeScript + Vite
-
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
-
-## Recommended IDE Setup
-
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Type Support For `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
-
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
-
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+1. 项目包管理方案
+项目使用bun进行管理
+2. 项目使用unplugin-auto-import、unplugin-vue-components进行自动按需引入、组件全局注册、composition api全局注册
+3. 图标方案
+项目使用iconify进行图标管理，并使用unplugin-auto-import、unplugin-vue-components进行自动按需导入，在项目中只需要按如下方式使用即可
+[iconify](https://icon-sets.iconify.design/)
+```html
+<!-- i是前缀，ep是图标命名空间，suny是图标名称，具体的可以到iconify官网查看 -->
+<i-ep-sunny />
+```
+由于是按需导入，所以在开发时需要安装对应的图标json并导入，例如安装element-plus的图标
+```shell
+bun add -D @iconify-json/ep
+```

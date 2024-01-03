@@ -21,6 +21,7 @@ export default defineConfig({
       imports: [
         // presets
         'vue',
+        '@vueuse/core'
       ],
       // Enable auto import by filename for default module exports under directories
       defaultExportByFilename: false,

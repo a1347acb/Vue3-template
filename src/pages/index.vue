@@ -1,6 +1,8 @@
 <script setup lang="ts">
 // 自动导入vueuse hook示例
 useTextSelection()
+
+useMenu()
 </script>
 
 <template>

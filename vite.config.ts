@@ -34,7 +34,8 @@ export default defineConfig({
       dirs: [
         // './hooks',
         // './composables' // only root modules
-        // './composables/**', // all nested modules
+        './src/composables/**', // all nested modules
+        './src/store/**'
         // ...
       ],
       resolvers: [

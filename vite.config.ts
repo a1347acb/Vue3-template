@@ -5,6 +5,7 @@ import Components from 'unplugin-vue-components/vite'
 import * as path from "path";
 import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
+import Unocss from 'unocss/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -74,7 +75,8 @@ export default defineConfig({
     Icons({
       autoInstall: true,
       scale: 1,
-    })
+    }),
+    Unocss()
   ],
   resolve: {
     alias: {

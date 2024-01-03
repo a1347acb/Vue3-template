@@ -4,7 +4,8 @@ useTextSelection()
 </script>
 
 <template>
-  <div>
+  <!-- unocss示例 -->
+  <div class="text-[#f00] text-[length:20px]">
     这是首页哦
     <!-- 图标使用示例 -->
     <i-ep-home-filled />

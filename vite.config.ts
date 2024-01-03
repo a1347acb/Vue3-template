@@ -6,6 +6,8 @@ import * as path from "path";
 import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 import Unocss from 'unocss/vite'
+import Pages from 'vite-plugin-pages'
+import Layouts from 'vite-plugin-vue-layouts'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -24,7 +26,8 @@ export default defineConfig({
       imports: [
         // presets
         'vue',
-        '@vueuse/core'
+        '@vueuse/core',
+        'vue-router'
       ],
       // Enable auto import by filename for default module exports under directories
       defaultExportByFilename: false,
@@ -77,7 +80,16 @@ export default defineConfig({
       autoInstall: true,
       scale: 1,
     }),
-    Unocss()
+    Unocss(),
+    Pages({
+      dirs: [
+        { dir: 'src/pages', baseRoute: '' }
+      ]
+    }),
+    Layouts({
+      layoutsDirs: 'src/layouts',
+      defaultLayout: 'main'
+    })
   ],
   resolve: {
     alias: {

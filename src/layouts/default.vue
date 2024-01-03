@@ -3,12 +3,9 @@
 </script>
 
 <template>
-这是登录页面
+  <router-view/>
 </template>
-<route lang="yaml">
-meta:
-    layout: default
-</route>
+
 <style scoped>
 
 </style>

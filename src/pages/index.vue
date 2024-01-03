@@ -1,10 +1,13 @@
 <script setup lang="ts">
-import Index from '@/pages/index.vue'
+
 </script>
 
 <template>
-  <Index/>
+  <div>
+    这是首页哦
+  </div>
 </template>
 
 <style scoped>
+
 </style>

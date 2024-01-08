@@ -84,11 +84,13 @@ export default defineConfig({
     Pages({
       dirs: [
         { dir: 'src/pages', baseRoute: '' }
-      ]
+      ],
+      exclude: ['*/components/**']
     }),
     Layouts({
       layoutsDirs: 'src/layouts',
-      defaultLayout: 'main'
+      defaultLayout: 'main',
+      exclude: ['*/components/**']
     })
   ],
   resolve: {
